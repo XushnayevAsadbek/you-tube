@@ -1,5 +1,21 @@
-export const Short  = ()=>{
-    return(
-        <>Short </>
+import { Link } from "react-router-dom"
+
+export const Short = ({ stateshort }) => {
+    return (
+        <div style={{
+            display:'flex',
+        }}>
+
+            {stateshort?.data?.description
+
+
+            },
+          <Link style={{
+            display:'block',
+            fontSize:'24px',
+          }} to={stateshort?.data?.vanityChannelUrl}>
+          stateshort?.data?.vanityChannelUrl
+          </Link>
+        </div>
     )
 }

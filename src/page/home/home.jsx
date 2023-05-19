@@ -1,5 +1,17 @@
-export const Home = ()=>{
+export const Home = ({state})=>{
     return(
-        <>Home</>
+     <div>
+
+   <h1>
+     {state?.data?.country}
+   </h1>
+   <p>
+    {
+        state?.data?.subscriberCountText
+    }
+   </p>
+
+
+     </div>
     )
 }
