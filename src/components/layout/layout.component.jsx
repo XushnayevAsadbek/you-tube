@@ -7,40 +7,19 @@ import {
 } from '@ant-design/icons';
 import { Button, Layout as AntLayout, Menu, theme } from 'antd';
 import { useState } from 'react';
+import { Sidebar } from './sidebar';
 const { Header, Sider, Content } = AntLayout;
 
-export const Layout = () => {
+export const Layout = ({children}) => {
     const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken()
     return (
-        <AntLayout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical" />
-        <Menu
-          theme="dark"
-          mode="inline"
-          defaultSelectedKeys={['1']}
-          items={[
-            {
-              key: '1',
-              icon: <UserOutlined />,
-              label: 'nav 1',
-            },
-            {
-              key: '2',
-              icon: <VideoCameraOutlined />,
-              label: 'nav 2',
-            },
-            {
-              key: '3',
-              icon: <UploadOutlined />,
-              label: 'nav 3',
-            },
-          ]}
-        />
-      </Sider>
+        <AntLayout style={{
+            height:'100%',
+        }}>
+     <Sidebar collapsed={collapsed} />
       <AntLayout>
         <Header
           style={{
@@ -67,7 +46,7 @@ export const Layout = () => {
             background: colorBgContainer,
           }}
         >
-          Content
+          {children}
         </Content>
       </AntLayout>
     </AntLayout>
