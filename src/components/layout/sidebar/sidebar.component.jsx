@@ -1,4 +1,4 @@
-import { HistoryOutlined, HomeOutlined, UploadOutlined, VideoCameraOutlined, YoutubeOutlined } from "@ant-design/icons";
+import { HistoryOutlined, HomeOutlined, UploadOutlined, VideoCameraOutlined, YoutubeFilled, YoutubeOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd"
 import { useLocation, useNavigate } from "react-router-dom";
 const {Sider} = Layout;
@@ -11,7 +11,14 @@ export const Sidebar = ({ collapsed }) =>{
   }
     return(
         <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical" />
+        <div className="demo-logo-vertical" > 
+        <p>
+         <YoutubeFilled   style={{
+          fontSize:'30px',
+         }}/>
+         logo
+        </p>
+        </div>
         <Menu
           theme="dark"
           mode="inline"

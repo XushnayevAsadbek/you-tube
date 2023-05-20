@@ -1,0 +1,21 @@
+
+
+
+.video-icon{
+    margin-right: 24px;
+    padding: 10px 10px;
+
+    /* padding: 50%; */
+}
+.video-icon:hover{
+    background-color:#ccc;
+    border-radius: 50%;
+}
+.play-icon{
+    padding: 10px 10px;
+    
+}
+.play-icon:hover{
+    background-color:#ccc;
+    border-radius: 50%; 
+}

@@ -1,6 +1,8 @@
 import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
+    PlayCircleOutlined,
+    SearchOutlined,
     UploadOutlined,
     UserOutlined,
     VideoCameraOutlined,
@@ -8,6 +10,7 @@ import {
 import { Button, Layout as AntLayout, Menu, theme } from 'antd';
 import { useState } from 'react';
 import { Sidebar } from './sidebar';
+import './layout.css'
 const { Header, Sider, Content } = AntLayout;
 
 export const Layout = ({children}) => {
@@ -21,13 +24,17 @@ export const Layout = ({children}) => {
         }}>
      <Sidebar collapsed={collapsed} />
       <AntLayout>
-        <Header
+        <Header 
           style={{
             padding: 0,
             background: colorBgContainer,
+            display:'flex',
+            gap:'270px',
+            
           }}
         >
-          <Button
+         <div>
+         <Button
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             onClick={() => setCollapsed(!collapsed)}
@@ -37,6 +44,27 @@ export const Layout = ({children}) => {
               height: 64,
             }}
           />
+         </div>
+         <div>
+         <input type="search" placeholder='Введите запрос' style={{
+            width:'400px',
+            padding:'10px 15px',
+            borderRadius:'20px'
+
+          }} 
+          icon={<SearchOutlined />}        
+           />
+         </div>
+         <div style={{
+          fontSize:'24px',
+         }}>
+      <div>
+     
+        {<VideoCameraOutlined className='video-icon' />}
+      
+      {  <PlayCircleOutlined className='play-icon' />}
+      </div>
+         </div>
         </Header>
         <Content
           style={{
