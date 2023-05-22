@@ -6,8 +6,11 @@ import { Layout } from './components/layout';
 import { Home } from './page/home/home';
 import { Podpiski } from './page/podpiski/podpiski';
 import { Short } from './page/short/short';
+import { useAuth } from './hooks/useAuth';
+import { Login } from './page/login';
 
 const App = () => {
+  const [token] =useAuth();
 const [state, setState] = useState(null);
 const [stateshort , setStateshort] = useState(null);
 const [statepod ,setStatepod] = useState(null);
@@ -67,16 +70,20 @@ const [statepod ,setStatepod] = useState(null);
 console.log(state);
 console.log(stateshort);
 console.log(statepod );
-
-  return (
-   <Layout >
-   <Routes >
-    <Route path='/' element={<Home state={state} />} />
-    <Route path='/short' element={<Short stateshort={stateshort} />} />
-    <Route path='/podpiski' element={<Podpiski statepod={statepod} />} />
-
-   </Routes>
-   </Layout>
-  );
+ 
+    if (token) {
+      return (
+        <Layout >
+        <Routes >
+         <Route path='/' element={<Home state={state} />} />
+         <Route path='/short' element={<Short stateshort={stateshort} />} />
+         <Route path='/podpiski' element={<Podpiski statepod={statepod} />} />
+     
+        </Routes>
+        </Layout>
+       );
+    }
+    return <Login />;
+  
 };
 export default App;
