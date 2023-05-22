@@ -77,9 +77,6 @@ console.log(statepod );
 
    </Routes>
    </Layout>
-  // <div>
-  //   {state?.data?.country}
-  // </div>
   );
 };
 export default App;

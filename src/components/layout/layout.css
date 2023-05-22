@@ -19,3 +19,12 @@
     background-color:#ccc;
     border-radius: 50%; 
 }
+.auido-icon{
+    font-size: 24px;
+    margin-left: 10px;
+    padding: 10px 10px; 
+}
+.auido-icon:hover{
+    background-color:#ccc;
+    border-radius: 50%; 
+}

@@ -1,10 +1,9 @@
 import {
+  AudioOutlined,
     MenuFoldOutlined,
     MenuUnfoldOutlined,
     PlayCircleOutlined,
     SearchOutlined,
-    UploadOutlined,
-    UserOutlined,
     VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout as AntLayout, Menu, theme } from 'antd';
@@ -45,21 +44,24 @@ export const Layout = ({children}) => {
             }}
           />
          </div>
-         <div>
+        <div>
          <input type="search" placeholder='Введите запрос' style={{
             width:'400px',
             padding:'10px 15px',
             borderRadius:'20px'
 
           }} 
-          icon={<SearchOutlined />}        
+          icon={<SearchOutlined />}    
            />
+                       
+
+            {<AudioOutlined className='auido-icon' />}
          </div>
          <div style={{
           fontSize:'24px',
          }}>
       <div>
-     
+    
         {<VideoCameraOutlined className='video-icon' />}
       
       {  <PlayCircleOutlined className='play-icon' />}

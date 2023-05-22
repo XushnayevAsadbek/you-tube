@@ -40,7 +40,11 @@ export const Sidebar = ({ collapsed }) =>{
               icon: <UploadOutlined/>,
               label: 'Подписки',
             },
-            
+            {
+              key: '/video',
+              icon: <VideoCameraOutlined />,
+              label: 'video',
+            },
             {
               key: '/biblotika',
               icon: <YoutubeOutlined />,
@@ -50,11 +54,7 @@ export const Sidebar = ({ collapsed }) =>{
               key: '/history',
               icon: <HistoryOutlined/>,
               label: 'history',
-            }, {
-              key: '/video',
-              icon: <VideoCameraOutlined />,
-              label: 'video',
-            },
+            }, 
           ]}
         />
       </Sider>
