@@ -3,6 +3,7 @@ import Config from "../../../config";
 
 export const useHomeProps = () => {
     const [videos, setVideos] = useState([]);
+    const [loading, setLoading] = useState(true);
     console.log(Config);
     useEffect(() => {
         fetch(Config.apiUrl +'/trending?type=mu&hl=en&gl=US', {
@@ -13,7 +14,10 @@ export const useHomeProps = () => {
             }
         })
             .then((res) => res.json())
-            .then((data) =>setVideos(data.contents))
+            .then((data) =>{
+                setVideos(data.contents)
+                setLoading(false);
+            })
     }, []);
-    return {videos};
+    return {videos , loading};
 };
