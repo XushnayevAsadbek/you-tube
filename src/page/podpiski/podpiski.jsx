@@ -2,9 +2,7 @@ export const Podpiski = ({ statepod }) => {
     return (
 
         <div>
-            {statepod?.data?.lastUpdated
-
-            }
+            <p>Podpiski </p>
         </div>
 
     )
