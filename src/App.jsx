@@ -1,17 +1,25 @@
 import axios, { Axios } from 'axios';
 import { Route, Routes } from 'react-router-dom';
 import './App.css'
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { Layout } from './components/layout';
-import { Home } from './page/home/home';
 import { Podpiski } from './page/podpiski/podpiski';
 import { Short } from './page/short/short';
 import { useAuth } from './hooks/useAuth';
 import { Login } from './page/login';
-
+const Home = lazy(() =>
+  import('./page/home/home').then((component) => ({
+    default: component.Home,
+  }))
+);
+  const Video  = lazy(() =>
+  import('./page/video').then((component) => ({
+    default: component.Video,
+  }))
+);
 const App = () => {
-  const [token] =useAuth();
-  
+  const [token] = useAuth();
+
   useEffect(() => {
 
     // axios.get('https://youtube-search-and-download.p.rapidapi.com/channel',{
@@ -24,7 +32,7 @@ const App = () => {
     //     'X-RapidAPI-Key': '8c0cd59d75mshb7f7737ebaff76ap1e39d6jsn80e0e0525623',
     //     'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
     //   }
-    
+
     // }).then(res => {
     //   if(res){
     //     setStateshort(res);
@@ -45,25 +53,28 @@ const App = () => {
 
     //     setStatepod(res);
     //   }
-     
+
     // })
-  
+
   }, [])
 
- 
-    if (token) {
-      return (
-        <Layout >
+
+  if (token) {
+    return (
+      <Layout >
+        <Suspense >
         <Routes >
-         <Route path='/' element={<Home />} />
-         <Route path='/short' element={<Short />} />
-         <Route path='/podpiski' element={<Podpiski  />} />
-     
+          <Route path='/' element={<Home />} />
+          <Route path='/short' element={<Short />} />
+          <Route path='/podpiski' element={<Podpiski />} />
+          <Route path='/video/:id' element={<Video />} />
+
         </Routes>
-        </Layout>
-       );
-    }
-    return <Login />;
-  
+        </Suspense>
+      </Layout>
+    );
+  }
+  return <Login />;
+
 };
 export default App;

@@ -20,8 +20,8 @@ export const Sidebar = ({ collapsed }) =>{
         </p>
         </div>
         <Menu
-          theme="dark"
-          mode="inline"
+          // theme="dark"
+          // mode="inline"
           onClick={onNaviget}
           selectedKeys={[`/${pathname.split('/') [1]}`]}
           items={[

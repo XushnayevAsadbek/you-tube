@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import Config from "../../../config";
 
 export const useHomeProps = () => {
+    const navigate= useNavigate();
     const [videos, setVideos] = useState([]);
     const [loading, setLoading] = useState(true);
     console.log(Config);
@@ -19,5 +21,8 @@ export const useHomeProps = () => {
                 setLoading(false);
             })
     }, []);
-    return {videos , loading};
+    const onNavigate = (id) =>{
+        navigate('/video/' +id)
+    }
+    return {videos , loading , onNavigate};
 };
