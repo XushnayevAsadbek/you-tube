@@ -12,12 +12,22 @@ export const Sidebar = ({ collapsed }) =>{
     return(
         <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" > 
-        <p>
-         <YoutubeFilled   style={{
+        <p style={{
+          fontSize:'28px',
+          fontWeight:'bold',
+          
+
+        }}>
+        <YoutubeFilled   style={{
           fontSize:'30px',
+          marginLeft:'10px',
+          marginRight:'5px',
+          color:'red'
+
          }}/>
-         logo
+         YouTube
         </p>
+      
         </div>
         <Menu
           // theme="dark"

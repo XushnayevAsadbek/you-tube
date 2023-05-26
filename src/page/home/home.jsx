@@ -15,7 +15,7 @@ export const Home = hoc(useHomeProps, ({ videos , loading , onNavigate}) => {
             bodyStyle={{
               padding:'16px',
             }}
-            onClick={onNavigate.bind(video.videoId)}
+            onClick={onNavigate.bind(null,  video.videoId)}
             cover={<img alt="example" src={video.thumbnails[0].url} />}
           >
             {console.log(video)}
@@ -23,10 +23,10 @@ export const Home = hoc(useHomeProps, ({ videos , loading , onNavigate}) => {
               <>
               <p style={{
                 marginBottom:'10px'
-              }}>{video.viewCountText}</p>
+              }}>{video.channelName}</p>
               <p style={{
                 marginTop:'0'
-              }}> {video.viewCountText}</p>
+              }}> {video.viewCountText }</p>
               </>
             } />
           </Card>

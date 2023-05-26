@@ -8,6 +8,7 @@ export const Login = hoc(useLoginProps ,({onLogin ,emailRef , passwordRef})=>{
         flexDirection:'column',
         }} align={"middle"} justify={'center'}>
             <Title level={2}>Login</Title>
+            <Title level={5}>Email: eve.holt@reqres.in </Title>
             <Form layout="vertical" onFinish={onLogin} >
                  <Form.Item
                     label="Email"

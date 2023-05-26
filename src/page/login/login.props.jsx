@@ -14,7 +14,7 @@ export const useLoginProps = () => {
             email,
             password,
         }
-        // console.log(process.env.REACT_APP_URL);
+        
         fetch(Config.url + '/api/login',{
             method:'POST',
             headers:{

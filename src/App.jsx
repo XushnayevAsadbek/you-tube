@@ -7,6 +7,8 @@ import { Podpiski } from './page/podpiski/podpiski';
 import { Short } from './page/short/short';
 import { useAuth } from './hooks/useAuth';
 import { Login } from './page/login';
+import { Biblotika } from './page/biblotika';
+import { History } from './page/history';
 const Home = lazy(() =>
   import('./page/home/home').then((component) => ({
     default: component.Home,
@@ -68,6 +70,9 @@ const App = () => {
           <Route path='/short' element={<Short />} />
           <Route path='/podpiski' element={<Podpiski />} />
           <Route path='/video/:id' element={<Video />} />
+          <Route path='/biblotika' element={<Biblotika />} />
+          <Route path='/history' element={<History />} />
+
 
         </Routes>
         </Suspense>

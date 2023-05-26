@@ -45,19 +45,17 @@ export const Layout = ({ children }) => {
             />
           </div>
           <div>
-            <input type="search" placeholder='Введите запрос' style={{
+            <input type="search"
+            icon={<SearchOutlined />}
+             placeholder='Введите запрос' style={{
               width: '400px',
               padding: '10px 15px',
               borderRadius: '20px'
 
             }}
-              icon={<SearchOutlined />}
+              
             />
-            {/* <div>
-              <input type="text" />
-            </div> */}
-
-          
+           
               {<AudioOutlined className='auido-icon' />}
           </div>
           <div style={{

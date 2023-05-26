@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 
 export const Video = () => {
+    console.log("Video");
     const {id} = useParams();
     return (
         <div>
@@ -13,11 +14,7 @@ export const Video = () => {
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
-            ></iframe>
-
-            {/* <p>
-            {Video.viewCountText}
-            </p> */}
+            ></iframe> 
         </div>
     )
 }

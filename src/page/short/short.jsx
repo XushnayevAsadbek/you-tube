@@ -14,7 +14,7 @@ export const Short = ({ stateshort }) => {
             display:'block',
             fontSize:'24px',
           }} to={stateshort?.data?.vanityChannelUrl}>
-          stateshort?.data?.vanityChannelUrl
+          Short
           </Link>
         </div>
     )
